@@ -17,7 +17,7 @@ const ListContainerReportLayout = ({
           <div className="py-8 text-center">
             <Spinner />
           </div>
-        ) : items?.every(collection => collection?.length) ? (
+        ) : items?.every((collection) => collection?.length) ? (
           children
         ) : (
           <div className="py-8 text-center">

@@ -1,22 +1,22 @@
-import React from 'react'
+import React from "react";
 import { Link, Navigate, useNavigate, useLocation } from "react-router";
-import { Button, InputField } from '@/commons/components'
-import { useAuth } from '@/commons/auth'
-import { Controller, useForm } from 'react-hook-form'
+import { Button, InputField } from "@/commons/components";
+import { useAuth } from "@/commons/auth";
+import { Controller, useForm } from "react-hook-form";
 
 const LoginPage = () => {
-  const { control, handleSubmit } = useForm()
-  const { isAuthenticated, loginGoogle, loginPassword } = useAuth()
-  const { state } = useLocation()
-  const navigate = useNavigate()
+  const { control, handleSubmit } = useForm();
+  const { isAuthenticated, loginGoogle, loginPassword } = useAuth();
+  const { state } = useLocation();
+  const navigate = useNavigate();
 
-  const loginWithPassword = data => {
-    loginPassword(data)
-    navigate(state)
-  }
+  const loginWithPassword = (data) => {
+    loginPassword(data);
+    navigate(state);
+  };
 
   if (isAuthenticated) {
-    return <Navigate to="/" />
+    return <Navigate to="/" />;
   }
 
   return (
@@ -64,7 +64,7 @@ const LoginPage = () => {
               Masuk
             </Button>
             <div className="text-center text-sm text-neutral/70 mt-1">
-              Belum punya akun?{' '}
+              Belum punya akun?{" "}
               <Link to="/register" className="btn-link normal-case">
                 Daftar
               </Link>
@@ -75,7 +75,7 @@ const LoginPage = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LoginPage
+export default LoginPage;

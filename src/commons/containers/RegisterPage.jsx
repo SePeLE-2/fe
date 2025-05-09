@@ -1,22 +1,22 @@
-import { useAuth } from '@/commons/auth'
-import { Button, InputField } from '@/commons/components'
-import React, { useContext } from 'react'
-import { Controller, useForm } from 'react-hook-form'
+import { useAuth } from "@/commons/auth";
+import { Button, InputField } from "@/commons/components";
+import React from "react";
+import { Controller, useForm } from "react-hook-form";
 import { Link, Navigate, useNavigate, useLocation } from "react-router";
 
 const RegisterPage = () => {
-  const { loginGoogle, isAuthenticated, registerPassword } = useAuth()
-  const { control, handleSubmit } = useForm()
-  const { state } = useLocation()
-  const navigate = useNavigate()
+  const { loginGoogle, isAuthenticated, registerPassword } = useAuth();
+  const { control, handleSubmit } = useForm();
+  const { state } = useLocation();
+  const navigate = useNavigate();
 
-  const registerWithPassword = data => {
-    registerPassword(data)
-    navigate(state)
-  }
+  const registerWithPassword = (data) => {
+    registerPassword(data);
+    navigate(state);
+  };
 
   if (isAuthenticated) {
-    return <Navigate to="/" />
+    return <Navigate to="/" />;
   }
 
   return (
@@ -67,7 +67,7 @@ const RegisterPage = () => {
               Daftar
             </Button>
             <div className="text-center text-sm text-neutral/70 mt-1">
-              Sudah punya akun?{' '}
+              Sudah punya akun?{" "}
               <Link to="/login" className="btn-link normal-case">
                 Log in
               </Link>
@@ -78,7 +78,7 @@ const RegisterPage = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RegisterPage
+export default RegisterPage;

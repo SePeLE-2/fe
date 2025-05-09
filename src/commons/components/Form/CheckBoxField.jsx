@@ -1,5 +1,6 @@
 import useAppearance from "@/commons/appearance/useAppearance";
 import React, { forwardRef } from "react";
+import PropTypes from "prop-types";
 import { INPUT_CLASSNAMES } from "./variants";
 
 const CheckBoxField = forwardRef(function CheckBoxField(props, ref) {
@@ -23,5 +24,12 @@ const CheckBoxField = forwardRef(function CheckBoxField(props, ref) {
     </div>
   );
 });
+
+CheckBoxField.propTypes = {
+  label: PropTypes.string,
+  className: PropTypes.string,
+  kit: PropTypes.object,
+  checked: PropTypes.bool,
+};
 
 export default CheckBoxField;

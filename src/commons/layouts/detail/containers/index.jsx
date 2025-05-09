@@ -1,17 +1,10 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 import { Spinner } from "@/commons/components";
 
-const DetailContainerLayout = ({
-  title,
-  singularName,
-  isLoading,
-  items,
-  children,
-  isCorrelatedWithAnotherComponent,
-}) => {
+const DetailContainerLayout = ({ title, isLoading, items, children }) => {
   return (
-    <div className={`prose ${isCorrelatedWithAnotherComponent ? 'w-full max-w-screen-xl' : 'max-w-screen-lg'} sm:mx-auto`}>
+    <div className="container mx-auto max-w-xl">
       <h2 className="text-center sm:text-left">{title}</h2>
       {isLoading ? (
         <div className={"py-8 text-center"}>
@@ -26,6 +19,14 @@ const DetailContainerLayout = ({
       )}
     </div>
   );
+};
+
+DetailContainerLayout.propTypes = {
+  title: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  items: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
+  isCorrelatedWithAnotherComponent: PropTypes.bool,
 };
 
 export default DetailContainerLayout;

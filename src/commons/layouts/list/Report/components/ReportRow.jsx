@@ -1,6 +1,11 @@
 import React, { useRef } from "react";
 
-import { TableBody, TableCell, TableHead, TableRow } from "@/commons/components";
+import {
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+} from "@/commons/components";
 
 const ReportRow = ({ items, itemsAttrs }) => {
   const DISTINCT_ROW = [

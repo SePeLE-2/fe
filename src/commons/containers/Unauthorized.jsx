@@ -1,6 +1,6 @@
-import React from 'react'
-import Illustration from "@/commons/static/images/unauthorized.svg"
-import { Button } from '@/commons/components'
+import React from "react";
+import Illustration from "@/commons/static/images/unauthorized.svg";
+import { Button } from "@/commons/components";
 import { Link } from "react-router";
 
 const Unauthorized = () => {
@@ -16,7 +16,7 @@ const Unauthorized = () => {
         </Button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Unauthorized
+export default Unauthorized;

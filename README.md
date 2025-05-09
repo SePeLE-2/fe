@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Kode sumber aplikasi React ini dihasilkan oleh [IFML UI Generator](https://gitlab.com/RSE-Lab-Fasilkom-UI/PricesIDE/ifml-ui-generator) menggunakan [template Desk](https://gitlab.com/RSE-Lab-Fasilkom-UI/PricesIDE/ifml-ui-generator/-/tree/staging/ifml.ui.generator/app_example/template_desk).
+=======
+Kode sumber aplikasi React ini dihasilkan oleh [IFML UI Generator](https://gitlab.com/RSE-Lab-Fasilkom-UI/PricesIDE/ifml-ui-generator) menggunakan [template Standard](https://gitlab.com/RSE-Lab-Fasilkom-UI/PricesIDE/ifml-ui-generator/-/tree/staging/ifml.ui.generator/app_example/template_standard).
+>>>>>>> 294086b7dd1b0528d477b652110b7d31093ae5fa
 
 ## Memulai
 

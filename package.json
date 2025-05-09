@@ -14,7 +14,10 @@
     "react": "^18.3.1",
     "react-cookie": "^3.0.8",
     "react-currency-input-field": "^3.10.0",
+<<<<<<< HEAD
     "react-data-table-component": "^7.5.4",
+=======
+>>>>>>> 294086b7dd1b0528d477b652110b7d31093ae5fa
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.1",
     "react-hot-toast": "^2.4.0",
@@ -22,7 +25,10 @@
     "react-router": "^7.1.0",
     "react-select": "^5.8.1",
     "recharts": "^2.13.3",
+<<<<<<< HEAD
     "styled-components": "^6.1.8",
+=======
+>>>>>>> 294086b7dd1b0528d477b652110b7d31093ae5fa
     "uuid-random": "^1.3.2",
     "zustand": "^4.1.3"
   },
@@ -58,4 +64,8 @@
   },
   "type": "module",
   "packageManager": "npm@11.0.0"
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 294086b7dd1b0528d477b652110b7d31093ae5fa

@@ -1,5 +1,6 @@
 import React from "react";
 import { VisualizationAttr } from "@/commons/components";
+import PropTypes from "prop-types";
 
 const DetailComponentLayout = ({
   item,
@@ -9,42 +10,39 @@ const DetailComponentLayout = ({
 }) => {
   return (
     <div className="card card-body mx-auto w-full bg-white shadow-xl not-prose p-4 sm:p-8">
-      <div className="flex flex-col sm:flex-row">
-        <div className="sm:w-1/2">
-          {itemsAttrs?.map(
-            (va) =>
-              va.label.match("Gambar") && (
-                <VisualizationAttr
-                  label={va.label}
-                  content={item[va.featureName]}
-                />
-              )
-          )}
-        </div>
-        <div className="flex flex-col px-4 gap-2 sm:w-1/2">
-          <div className="grid grid-cols-2 gap-2 content-start">
-            {itemsAttrs?.map(
-              (va) =>
-                !va.label.match("Deskripsi") &&
-                !va.label.match("Gambar") && (
-                  <VisualizationAttr
-                    label={va.label}
-                    content={item[va.featureName]}
-                  />
-                )
-            )}
-          </div>
-          {itemsAttrs?.map(
-            (va) =>
-              va.label.match("Deskripsi") && (
-                <VisualizationAttr
-                  label={va.label}
-                  content={item[va.featureName]}
-                />
-              )
-          )}
-        </div>
+      {itemsAttrs?.map(
+        (va) =>
+          va.label.match("Gambar") && (
+            <VisualizationAttr
+              label={va.label}
+              content={item[va.featureName]}
+              key={`${va.label}-${item[va.featureName]}`}
+            />
+          )
+      )}
+      <div className="flex flex-col sm:grid sm:grid-cols-2 gap-x-4">
+        {itemsAttrs?.map(
+          (va) =>
+            !va.label.match("Gambar") &&
+            !va.label.match("Deskripsi") && (
+              <VisualizationAttr
+                label={va.label}
+                content={item[va.featureName]}
+                key={`${va.label}-${item[va.featureName]}`}
+              />
+            )
+        )}
       </div>
+      {itemsAttrs?.map(
+        (va) =>
+          va.label.match("Deskripsi") && (
+            <VisualizationAttr
+              label={va.label}
+              content={item[va.featureName]}
+              key={`${va.label}-${item[va.featureName]}`}
+            />
+          )
+      )}
       <div className="card-actions justify-end">
         {/* View Element Event [singularName /] Element*/}
         {itemsEvents?.map((event) => event)}
@@ -52,6 +50,13 @@ const DetailComponentLayout = ({
       {itemsModals?.map((modal) => modal)}
     </div>
   );
+};
+
+DetailComponentLayout.propTypes = {
+  item: PropTypes.object.isRequired,
+  itemsAttrs: PropTypes.array.isRequired,
+  itemsEvents: PropTypes.array.isRequired,
+  itemsModals: PropTypes.array.isRequired,
 };
 
 export default DetailComponentLayout;
