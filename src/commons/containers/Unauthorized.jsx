@@ -7,7 +7,7 @@ const Unauthorized = () => {
   return (
     <div className="h-full bg-base-200 grid place-items-center p-6">
       <div className="flex flex-col items-center text-center">
-        <Illustration className="w-full text-primary max-w-xs" />
+        <img src={Illustration} alt="Unauthorized" className="w-full text-primary max-w-xs" />
         <p>
           Mohon maaf, Anda tidak memiliki akses untuk mengunjungi halaman ini.
         </p>

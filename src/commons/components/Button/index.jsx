@@ -8,14 +8,15 @@ const Button = ({
   disabled,
   type,
   onClick,
-  variant,
+  variant = 'primary',
   className,
   children,
   kit,
   size = "md",
 }) => {
-  const interfaceKit = useAppearance();
-  const buttonStyle = (kit ?? interfaceKit).button[variant];
+  const interfaceKit = useAppearance() || { button: { primary: 'solid-primary' } };
+  const buttonObject = (kit ?? interfaceKit).button || { primary: 'solid-primary' };
+  const buttonStyle = buttonObject[variant] || 'solid-primary';
   const buttonVariant = BUTTON_CLASSNAMES[buttonStyle];
   const buttonSize = BUTTON_SIZES[size];
 
