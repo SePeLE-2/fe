@@ -6,43 +6,36 @@
 import React, { useEffect, useState, useContext} from 'react'
 import { Button, Spinner } from "@/commons/components"
 import * as Layouts from '@/commons/layouts';
-import { Link } from "react-router";
 import { useParams } from "@/commons/hooks/useParams"
 import { HeaderContext } from "@/commons/components"
-import { useSearchParams } from "react-router";
-import Form<<Form>>FillSeat from '../components/Form<<Form>>FillSeat'
-const FillSeat = props => {
-const [isLoading, setIsLoading] = useState({
-	<<Form>>FillSeat: false,
+import FormFillSeat from '../components/FormFillSeat';
 
+const FillSeat = props => {
+	const [isLoading, setIsLoading] = useState({
+		formFillSeat: false,
 	});
 	const { setTitle } = useContext(HeaderContext);
 
-
-
-	
 	useEffect(() => {
 		setTitle("Fill Seat")
 	}, []);
-return (
-	<Layouts.ViewContainerLayout
-		buttons={
-			<>
-			<></>
-			</>
-		}
-	>
-<Layouts.FormContainerLayout
-		singularName={"Fill"}
-		
-	>
-		<Form<<Form>>FillSeat
-			{...props}
-		/>
-	</Layouts.FormContainerLayout>
-
-	</Layouts.ViewContainerLayout>
-  )
+	
+	return (
+		<Layouts.ViewContainerLayout
+			buttons={
+				<>
+				</>
+			}
+		>
+			<Layouts.FormContainerLayout
+				singularName={"Fill"}
+			>
+				<FormFillSeat
+					{...props}
+				/>
+			</Layouts.FormContainerLayout>
+		</Layouts.ViewContainerLayout>
+	)
 }
-export default FillSeat
 
+export default FillSeat 

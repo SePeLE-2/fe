@@ -5,47 +5,32 @@
 */
 import React from 'react';
 import Event from './containers/Event'
-import [XOR]<<ViewContainer>>Customer from './containers/[XOR]<<ViewContainer>>Customer'
 import AddEvent from './containers/AddEvent'
 import AddRating from './containers/AddRating'
 import FillSeat from './containers/FillSeat'
+import EventDetail from './containers/EventDetail'
 
 const eventRoutes = [
 { 
-	path: "",
+	path: "/event",
 	element: <Event />,
-}
-
-	
-,
+},
 { 
-	path: "",
-	element: <[XOR]<<ViewContainer>>Customer />,
-}
-
-	
-,
-{ 
-	path: "",
+	path: "/event/add",
 	element: <AddEvent />,
-}
-
-	
-,
+},
 { 
-	path: "",
+	path: "/event/:eventId",
+	element: <EventDetail />,
+},
+{ 
+	path: "/event/rating/:eventId",
 	element: <AddRating />,
-}
-
-	
-,
+},
 { 
-	path: "",
+	path: "/event/fill-seat/:eventId",
 	element: <FillSeat />,
 }
-
-	
-
 ]
 
 export default eventRoutes
