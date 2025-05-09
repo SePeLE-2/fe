@@ -5,8 +5,8 @@ import { INPUT_CLASSNAMES } from "./variants";
 
 const InputField = forwardRef(function InputField(props, ref) {
   const { label, className, fieldState, kit } = props;
-  const interfaceKit = useAppearance();
-  const inputStyle = (kit ?? interfaceKit).input;
+  const interfaceKit = useAppearance() || { input: 'outline' };
+  const inputStyle = (kit ?? interfaceKit).input || 'outline';
   const inputVariant = INPUT_CLASSNAMES[inputStyle];
 
   return (

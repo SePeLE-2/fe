@@ -20,10 +20,10 @@ const Preview = ({ control }) => {
     control,
   });
 
-  const kit = INTERFACE_KITS[kitName];
+  const kit = INTERFACE_KITS[kitName] || INTERFACE_KITS['donor'];
   const typographyStyle = kit?.typography ?? "sans";
   const typography = FONT_CLASSNAMES[typographyStyle];
-  const isRounded = kit.rounded;
+  const isRounded = kit?.rounded ?? false;
 
   const tableHeads = ["No", "Nama", "Jumlah"];
   const tableRows = ["Andromeda", "Cassiopeia", "Pegasus", "Centaurus"];
