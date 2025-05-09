@@ -6,8 +6,6 @@ import staticPageRoutes from "@/staticPage/routes";
 import homeRoutes from "@/home/routes";
 import newsArticleRoutes from "@/newsArticle/routes";
 import commentRoutes from "@/comment/routes";
-import newsArticleRoutes from "@/newsArticle/routes";
-import commentRoutes from "@/comment/routes";
 
 const GlobalRoutes = () => {
   const router = useRoutes([
