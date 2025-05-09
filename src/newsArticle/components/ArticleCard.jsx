@@ -30,7 +30,7 @@ const ArticleCard = ({ listArticle,
   		  featureName: "invalid",
             editable: false
           }
-  ,
+,
           {
             id: "articledate",
             condition: "",
