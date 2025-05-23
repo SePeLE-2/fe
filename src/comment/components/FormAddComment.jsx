@@ -5,8 +5,9 @@
 */
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
+import { useParams } from "@/commons/hooks/useParams"
 import { useNavigate, useSearchParams } from "react-router";
-import { useNavigate, useParams } from "react-router-dom";
+// import { useNavigate, useParams } from "react-router-dom";
 import {
   Button,
   Form,
@@ -77,7 +78,7 @@ const FormAddComment = ({
 				  <InputField
 		            label="Comment"
 		            placeholder="Masukkan comment"
-		            defaultValue={comment}	            fieldState={fieldState}
+		            defaultValue=""	            fieldState={fieldState}
 					{...field}
 					isRequired={false}
 		          />

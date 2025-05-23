@@ -24,6 +24,7 @@ const { checkPermission } = useAuth();
 	const { setTitle } = useContext(HeaderContext);
 
 const [comment, setComment] = useState()
+const { articleId } = useParams()
 	
 	
 	
