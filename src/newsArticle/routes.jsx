@@ -9,26 +9,26 @@ import ListArticlePage from './containers/ListArticlePage'
 import AddArticlePage from './containers/AddArticlePage'
 
 const newsArticleRoutes = [
-{ 
-	path: "/article",
-	element: <ListArticlePage />,
-}
+	{
+		path: "/article",
+		element: <ListArticlePage />,
+	}
 
-	
-,
-{ 
-	path: "/article/create",
-	element: <AddArticlePage />,
-}
 
-	
-,
-{ 
-	path: "/article/:articleId",
-	element: <ArticleDetailPage />,
-}
+	,
+	{
+		path: "/article/create",
+		element: <AddArticlePage />,
+	}
 
-	
+
+	,
+	{
+		path: "/article/:articleId",
+		element: <ArticleDetailPage />,
+	}
+
+
 
 ]
 
