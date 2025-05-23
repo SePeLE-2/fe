@@ -17,17 +17,12 @@ import getListArticle from '../services/getListArticle'
 const ListArticlePage = props => {
 const { checkPermission } = useAuth();
 
-	const [isLoading, setIsLoading] = useState({
-	listArticle: false,
+const [isLoading, setIsLoading] = useState({
+	listArticle: false,});
+const { setTitle } = useContext(HeaderContext);
 
-	});
-	const { setTitle } = useContext(HeaderContext);
-
-const [listArticle, setListArticle] = useState()
+const [listArticle, setListArticle] = useState();
 	
-	
-	
-
 	useEffect(() => {
 		
 
@@ -36,6 +31,7 @@ const [listArticle, setListArticle] = useState()
 				setIsLoading(prev => ({...prev, listArticle: true}))
 				const { data: listArticle } = await getListArticle()
 				setListArticle(listArticle.data)
+				console.log("Fetched articles:", listArticle.data);
 			} finally {
 				setIsLoading(prev => ({...prev, listArticle: false}))
 			}

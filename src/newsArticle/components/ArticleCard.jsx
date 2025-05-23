@@ -3,7 +3,7 @@
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
-import React from 'react'
+import React, { useEffect, useState, useContext} from 'react'
 import { Link } from "react-router";
 import { useParams } from "@/commons/hooks/useParams"
 
@@ -12,10 +12,7 @@ import { Button } from '@/commons/components';
 
 import * as Layouts from "@/commons/layouts";
 
-const ArticleCard = ({ listArticle,
-		 
-
-	}) => {
+const ArticleCard = ({ listArticle,}) => {
   const { checkPermission } = useAuth();
   
   return (
@@ -24,32 +21,32 @@ const ArticleCard = ({ listArticle,
   	
   	itemsAttrs={[
           {
-            id: "articletitle",
+            id: "articleTitle",
             condition: "",
             label: "article title",
-  		  featureName: "invalid",
+  		      featureName: "articleTitle",
             editable: false
           }
   ,
           {
-            id: "articledate",
+            id: "articleDatePublished",
             condition: "",
             label: "article date",
-  		  featureName: "invalid",
+  		      featureName: "articleDatePublished",
             editable: false
           }
   ,
           {
-            id: "articleauthor",
+            id: "articleAuthor",
             condition: "",
             label: "article author",
-  		  featureName: "invalid",
+  		      featureName: "articleAuthor",
             editable: false
           }
   ]}
       itemsEvents={(articleItem) => [
         
-        <Link to={`/article/${articleId}`}>
+        <Link key={articleItem.idArticle} to={`/article/${articleItem.idArticle}`}>
           <Button
             size="sm"
             variant=
