@@ -31,7 +31,6 @@ const [listArticle, setListArticle] = useState();
 				setIsLoading(prev => ({...prev, listArticle: true}))
 				const { data: listArticle } = await getListArticle()
 				setListArticle(listArticle.data)
-				console.log("Fetched articles:", listArticle.data);
 			} finally {
 				setIsLoading(prev => ({...prev, listArticle: false}))
 			}
