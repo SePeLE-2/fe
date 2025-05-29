@@ -40,14 +40,12 @@ const FormAddComment = ({
   });
 
   const { articleId } = useParams();
-  
+  console.log("ARTICLE ID", articleId)
   const navigate = useNavigate()
   
   const tambah = (data) => {
     const cleanData = cleanFormData(data)
-    saveComment({
-      ...cleanData,
-    })
+    saveComment(cleanData, articleId)
     .then(({ data: { data } }) => {
      navigate(`/article/${articleId}/comment`)
   	notifySuccess(`Save Comment berhasil!`);
