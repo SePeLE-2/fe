@@ -45,8 +45,19 @@ const FormAddArticle = ({
   
   const tambah = (data) => {
     const cleanData = cleanFormData(data)
+
+	saveArticle({
+		...cleanData,
+	})
+	.then(({ data: { data } }) => {
+      navigate(`/article`)
+    })
+    .catch((error) => {
+      console.error(error);
+      notifyError(error);
+    });
+
   }
-  
   
   return (
 	<div>
