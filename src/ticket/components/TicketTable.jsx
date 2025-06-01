@@ -14,6 +14,7 @@ import * as Layouts from "@/commons/layouts";
 
 const TicketTable = ({ ticketData }) => {
   const { checkPermission } = useAuth();
+  console.log("INI DI TICKETTABLE", ticketData)
   
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat('id-ID', {
@@ -24,32 +25,41 @@ const TicketTable = ({ ticketData }) => {
   };
   
   return (
-    <>
-      {ticketData && ticketData.length > 0 ? (
-        ticketData.map((ticket) => (
-          <TableRow key={ticket.id} distinct={false}>
-            <TableCell>{ticket.eventName}</TableCell>
-            <TableCell>{ticket.ticketName}</TableCell>
-            <TableCell>{formatCurrency(ticket.price)}</TableCell>
-            <TableCell>{ticket.availability ? "Available" : "Sold Out"}</TableCell>
-            <TableCell isHiddenMobile>
-              <div className="flex btn-group gap-2 flex-wrap">
-                <Link to={`/ticket/${ticket.id}`}>
-                  <Button variant="primary" size="sm">Detail</Button>
-                </Link>
-              </div>
-            </TableCell>
-          </TableRow>
-        ))
-      ) : (
-        <TableRow>
-          <TableCell colSpan={5} className="text-center">
-            No tickets found
-          </TableCell>
-        </TableRow>
-      )}
-    </>
-  );
+    <table className="table w-full">
+      <thead>
+        <tr>
+          <th>Event Name</th>
+          <th>Ticket Name</th>
+          <th>Price</th>
+          <th>Availability</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {ticketData && ticketData.length > 0 ? (
+          ticketData.map((ticket) => (
+            <tr key={ticket.id}>
+              <td>{ticket.eventName}</td>
+              <td>{ticket.ticketName}</td>
+              <td>{formatCurrency(ticket.price)}</td>
+              <td>{ticket.availability ? "Available" : "Sold Out"}</td>
+              <td>
+                <div className="flex btn-group gap-2 flex-wrap">
+                  <Link to={`/ticket/${ticket.id}`}>
+                    <Button variant="primary" size="sm">Detail</Button>
+                  </Link>
+                </div>
+              </td>
+            </tr>
+          ))
+        ) : (
+          <tr>
+            <td colSpan={5} className="text-center">No tickets found</td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+  );  
 };
 
 export default TicketTable; 
