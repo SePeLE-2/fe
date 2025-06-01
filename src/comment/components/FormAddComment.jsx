@@ -5,8 +5,9 @@
 */
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
+import { useParams } from "@/commons/hooks/useParams"
 import { useNavigate, useSearchParams } from "react-router";
-import { useNavigate, useParams } from "react-router-dom";
+// import { useNavigate, useParams } from "react-router-dom";
 import {
   Button,
   Form,
@@ -39,14 +40,12 @@ const FormAddComment = ({
   });
 
   const { articleId } = useParams();
-  
+  console.log("ARTICLE ID", articleId)
   const navigate = useNavigate()
   
   const tambah = (data) => {
     const cleanData = cleanFormData(data)
-    saveComment({
-      ...cleanData,
-    })
+    saveComment(cleanData, articleId)
     .then(({ data: { data } }) => {
      navigate(`/article/${articleId}/comment`)
   	notifySuccess(`Save Comment berhasil!`);
@@ -77,7 +76,7 @@ const FormAddComment = ({
 				  <InputField
 		            label="Comment"
 		            placeholder="Masukkan comment"
-		            defaultValue={comment}	            fieldState={fieldState}
+		            defaultValue=""	            fieldState={fieldState}
 					{...field}
 					isRequired={false}
 		          />

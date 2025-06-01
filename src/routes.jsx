@@ -7,7 +7,7 @@ import homeRoutes from "@/home/routes";
 import eventRoutes from "@/event/routes";
 import newsArticleRoutes from "@/newsArticle/routes";
 import paymentRoutes from "@/payment/routes";
-// import commentRoutes from "./comment/routes";
+import commentRoutes from "./comment/routes";
 import reportRoutes from "./report/routes";
 import ticketRoutes from "./ticket/routes";
 
@@ -23,7 +23,7 @@ const GlobalRoutes = () => {
     ...newsArticleRoutes,
     ...paymentRoutes,
     ...ticketRoutes,
-    // ...commentRoutes,
+    ...commentRoutes,
   ])
   return router
 }

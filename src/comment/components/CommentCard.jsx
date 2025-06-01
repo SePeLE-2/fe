@@ -15,7 +15,7 @@ import * as Layouts from "@/commons/layouts";
 const CommentCard = ({ comment,
 	}) => {
   const { checkPermission } = useAuth();
-  const {  } = useParams()
+  const { articleId } = useParams()
   
   return (
     <Layouts.ListComponentCardLayout

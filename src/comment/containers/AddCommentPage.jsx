@@ -39,7 +39,7 @@ return (
 		buttons={
 			<>
 			<Layouts.ViewContainerBackButtonLayout>
-			  	<Link to={`/article/:articleId/comment
+			  	<Link to={`/article/${articleId}/comment
 			  	`}>
 			  		<Button className="p-4" variant="secondary">
 			  		  Kembali
