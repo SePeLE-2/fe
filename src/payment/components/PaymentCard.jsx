@@ -26,6 +26,40 @@ const PaymentCard = ({ listPayment, }) => {
           label: "amount",
           featureName: "amount",
           editable: false
+        },
+        {
+          id: "eventName",
+          label: "Event Name",
+          featureName: "eventName",
+          editable: false
+        },
+        {
+          id: "ticketName",
+          label: "Ticket Name",
+          featureName: "ticketName",
+          editable: false
+        },
+        {
+          id: "price",
+          label: "Price",
+          featureName: "price",
+          editable: false
+        },
+        {
+          id: "availability",
+          label: "Availability",
+          featureName: "availability",
+          editable: false
+        },
+        {
+          id: "eligibility",
+          label: "Eligibility",
+          render: (item) => (
+            <span style={{ color: item.amount >= item.ticketimpl.price ? 'green' : 'red' }}>
+              {item.amount >= item.ticketimpl.price ? "Eligible" : "Ineligible"}
+            </span>
+          ),
+          editable: false
         }
       ]}
       itemsEvents={(paymentItem) => [
