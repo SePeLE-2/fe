@@ -3,7 +3,7 @@
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
-import React from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Link } from "react-router";
 import { useParams } from "@/commons/hooks/useParams";
 
@@ -36,8 +36,8 @@ const TicketTable = ({ ticketData }) => {
         </tr>
       </thead>
       <tbody>
-        {ticketData && ticketData.length > 0 ? (
-          ticketData.map((ticket) => (
+        {ticketData && ticketData.data && ticketData.data.length > 0 ? (
+          ticketData.data.map((ticket) => (
             <tr key={ticket.id}>
               <td>{ticket.eventName}</td>
               <td>{ticket.ticketName}</td>
