@@ -4,8 +4,9 @@
 	version 3.9.0
 */
 import axios from 'axios';
+import environment from "@/commons/utils/environment";
 
-const API_URL = 'http://localhost:3001';
+const API_URL = environment.rootApi;
 
 const saveRating = async (data) => {
   try {
